@@ -1,0 +1,114 @@
+============================================
+PROJETO 1
+[*Álvaro*] + Carlos, Elder, João e Marcos
+Observações Gerais Diagrama Classes Completo: 6,0 -> (atraso 2d: -0.5) => 5,5
+
+- A estruturação das classes ficou ok
+- faltaram as telas de edição de dados, de cadastro, ...
+- cuidar com a padronização de nomes (métodos que
+ iniciam com letra maiúscula)
+- faltaram as variáveis que serão usadas para armazenar os
+dados na classe DaoMemoria
+- o sistema deve ser acessado por email e senha, mas as
+ entidades não possuem estes atributos.
+- dados dos coordenadores são descritos no trabalho:
+ [nome, endereço, telefone, grupo ou entidade da qual o
+ coordenador faz parte, e-mail e senha]
+- não tem método para criar evento?
+- os eventos também são uma entidade e também tem seus
+ atributos mencionados na descrição do problema.
+- como vao determinar qual usuário é um assistente para
+ um determinado evento?
+- faltaram vários métodos na descrição do diagrama.
+
+
+============================================
+PROJETO 2
+Adilson, Diogo e Gabriela + Eduardo e Vitor
+Observações Gerais Diagrama Classes Completo: -> 8.2 (atraso 1d: -0.2) => 8.0
+
+- diagrama em camadas: ok.
+- o atributo diasDeAntecedencia (corrigir nome) deveria estar na DAO,
+ pois este não é um atributo necessário apenas para o administrador.
+- o que seria o atributo cpfBolsista (int) na classe Administrador?
+- o método getReserva e getBolsista precisam de parâmetros senão
+ como vai se saber qual Reserva ou qual Bolsista deve ser retornado?
+- resumoOperações retorna void? Não deveria retornar uma string
+ ou um relatório?
+- uso do Ginásio e relatórioDeHorárioDeAgendamento também retorna void?
+- removerBolsista, registrarAgendamento, setDiasDeAntecedencia
+ aparecem na classe Ginasio, mas não aparecem na DAO. Notem, que
+ todos esses métodos deveriam alterar algum dado do sistema que,
+ por sua vez, deveria ficar registrado na classe Memoria (DAO).
+- acredito que a classe Relatório não será necessária e deve haver mais
+ métodos na classe ginásio justamente para consultar os dados que estão
+ na classe Memoria, organizá-los e devolvê-los para uma classe de tela.
+
+============================================
+PROJETO 3
+Adam e Alexandre + Felipe, Guilherme e Marcos
+Observações Gerais Diagrama Classes Completo: 7.5
+
+- diagrama em camadas: ok.
+- separaram as telas em pacotes: bom;
+- o sistema deveria conter um atributo para registrar a especialidade
+ do dentista também
+- esqueceram de colocar as variáveis na classe DadosMemoria;
+ Ali deve ter uma estrutura para guardar os clintes e os funcionarios;
+ Além disso, o sistema menciona a questão das consultas e do seu histórico
+ o que também deveria ser armazenado ali. Ainda, as consultas não são uma
+ entidade simples (não é apenas uma string), então seria interessante
+ criar uma classe Consulta em ED para organizar estes dados (ex: dia da consulta,
+ qual foi o dentista que atendeu, já foi pago?, ...)
+- Não ficou claro também como vai funcionar o agendamento das consultas uma vez
+ que não tem uma classe para consulta
+- Os métodos de cadastrar e editar (ex: cadastrarCliente, cadastrarFuncionario,
+ adicionarConsulta, editarConsulta) não recebem parâmetros!?. Sem parâmetro
+ como vai fazer para adicionar os dados?
+- Algo similar acontece em removerConsulta, que deveria ter um valor passado
+ como parâmetro para identificar qual é a consulta que se deseja remover.
+- E a parte do gerenciamento de estoque da clínica? também não tem classe
+ para identificar os itens do estoque e não tem um atributo na classe
+ DadosMemoria para registrar este estoque.
+
+
+============================================
+PROJETO 4
+Jonathan e Marlon + Mateus, Matheus e Ramon
+Observações Gerais Diagrama Classes Completo: 8.8
+
+- diagrama em camadas: ok.
+- A descrição do projeto diz que transferências podem ser agendadas,
+ mas na classe transferência não tem um campo de data para este
+ controle (data também seria interessante para manter um histórico)
+- o número do Boleto não vai caber em um int (são muitos dígitos)
+- colocaram TelaCadastro e TelaEdicao: ok, mas lembrem-se que tem
+ também um administrador geral que pode cadastrar e editar funcionários
+ do banco. Seria interessante destacar estas duas telas, uma
+ vez que esta última mencionada só pode ser acessada pelo administrador
+ geral do sistema.
+- Muitas coisas foram ocultadas devido ao uso desta abordagem
+ baseada em eventos. As classes que vão extender AuthenticationEvent,
+ poderiam ter os métodos inclusos na descrição para identificar o que
+ será passada como parâmetro nestas operações (ex: na classe Sacar,
+ criar um método realizarSaque com os argumentos: conta, poupanca ou
+ corrente [opcional], valor). Assim fica mais claro o que será necessário
+ para cada evento.
+
+
+===========================
+PROJETO GABRIEL
+Observações Gerais Diagrama Classes Completo: 9,4
+
+- método RemoverServico não recebe parâmetro?
+mas como vai saber qual serviço quer apagar?
+- getServico(String) não deveria retornar apenas um serviço?
+está retornando um arraylist de serviços
+- não ficou bem claro, mas me parece que você está usando o
+email dos usuários como "identificador". Assim é bom pois
+email deveria ser único mesmo (nomes poderiam ser iguais)
+- cuidar com a padronização de nomes (variáveis e métodos que
+iniciam com letra maiúscula)
+
+
+

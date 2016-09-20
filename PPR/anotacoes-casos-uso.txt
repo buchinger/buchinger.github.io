@@ -1,0 +1,239 @@
+============================================
+PROJETO 1
+Carlos, Elder, João Vitor Pereira, Marcos
+NOTA: 6.5 => 5.5  ==> 8.5
+* casos de uso entregues em atraso (dia 20/04 => 10 dias [-1])
+
+Observações Gerais:
+- Na descrição dos atores - coordenadores => corrigir'colocaram' para 'colocarão'; verificar a descrição do adminstrador também... tem outro problema.
+
+REQUISITOS
+
+
+REGRAS DE NEGÓCIO
+- Somente o coordenador que criou um evento poderá cancela-lo, ou então um admin.
+- Um evento pode ser gratuito (valor inscrição = zero)
+- Validação das datas de eventos: dia abertura das inscrições deve ser anterior ou igual ao dia de fechamneto, e dia de fechamento das inscrições deve ser anterior ou igual ao dia do evento.
+- Conta padrão admin / admin
+- certificados podem ser emitidos somente um dia após o evento
+
+
+DIAGRAMA DE CASOS DE USO
+(OK) - Os coordenadores podem "criar, editar ou cancelar eventos" três casos de uso separados
+ou agrupar alguns deles. Parece-me que "cancelar eventos" precisa de mais detalhemento (se alguem tiver pago deve-se retornar o valor em créditos; para cancelar precisa informar uma justificativa; ...), então poderia ser um caso de uso separado (a parte).
+(OK) - Os coordenadores também pode alterar suas informações pessoais: novo caso de uso.
+(OK) - Administradores podem criar os cadastros dos coordenadores => caso de uso.
+(OK) - Usuários podem fazer cadastro => caso de uso!
+(OK) - Usuários podem ver a lista de eventos => caso de uso!
+(OK) - A lista de eventos pode ser filtrada (eventos já inscritos, eventos não inscritos, eventos anteriores) => caso de uso extensor no caso de uso de lista eventos
+(OK) - Assistente (que pode agir como um usuário normal do sistema) podem realizar a confirmação de presença durante os eventos para os quais foram cadastrados por um coordenador => caso de uso!!
+(-) - Administradores podem alterar eventos => caso de uso! (compartilhado com coordenadores)
+(-) - Administrador principal pode alterar a conta dos outros admins => caso de uso!
+(NOTEM que existem dois tipos de admin: o geral e os admins secundários)
+(-) - Administradores podem alterar dados dos participantes => caso de uso!
+(OK) - Administradores podem confirmar pagamento atribuindo novo saldo => caso de uso! (separado do comprar créditos :: uma coisa é comprar créditos, outra é confirmar o pagamento).
+(-) - um caso de uso para todos os relatórios, mas o preferencial seria um caso de uso para cada tipo de relatório.
+
+
+CASOS DE USO
+
+(-) +UCS1: quais sao os dados que devem ser informados para criação do evento? O que seria dados não validados? não deveria ocorrer apenas o fluxo alternativo? Não precisa validar as datas de inscrição e inicio do evento? (precisa descrever isso ou fazer referência cruzada)
+
+(-) +UCS2: bom, só falta identificar em qual passo do fluxo principal pode acontecer um fluxo de exceção ou fluxo alternativo (ex. FE01 pode acontecer em qual passo do fluxo principal?)
+
+(-) +UCS3: a ideia descrita seria facilitar o sistema neste sentido. Ao escolher comprar crédito, o sistema indica somente qual a conta que o usuário deve fazer um depósito (seja online atraves de home banking ou em um caixa eletronico, por exemplo).O usuário faz a transferência por meio deste sistema e um admin posteriormente vai confirmar esta transferencia.
+
+(-) +UCS4: como é feita a validação de tempo (fácil, só adiciona a regra de negócio que diz que é um dia e faz uma referência cruzada);
+Por que envia o certificado para o email? Não pode mostrar no próprio sistema?
+ 
++UCS5: quais dados precisam ser preenchidos? É melhor individualizar cada caso em um novo caso de uso ou então separar em três fluxos alternativos (também é válido). Se escolher este úlitmo, alterar nome do caso de uso para: "Relatório'S' do Sistema"
+
+
+
+
+
+REVISÃO:
+(-) descrição superficial do Super administrador
+(-) no diagrama de casos de uso a seta do assistente para participante e do super admin para o admin esta errada (seria outro tipo de seta)
+
+
+
+
+
+============================================
+PROJETO 2
+Adilson, Diogo, Eduardo, Gabriela, Vitor
+NOTA: 5.6 => 8.5
+
+Observações Gerais:
+(OK) - Não menciona quais são os esportes que podem ser praticados no espaço
+(OK) - Faltou identificar que existe uma mesa de tenis e cinco jogos de xadrez disponíveis
+
+REQUISITOS
+(OK) Só pode fazer reserva de quadra? não pode fazer reserva da mesa de tenis de mesa ou material de xadrez?
+(OK) Acessar SIGA para confirmação do que? (de matrícula/dados do requerinte?!)
+Por que a confirmação de dados no SIGA aparece como não funcional também??
+(OK) O que seria exatamente confirmar as informações do requerente?
+Parece que este requisito funcional poderia ser aglutinado com o requisito que fala da confirmação dos dados no SIGA
+(OK) Considerar a troca da palavra "checar" por "consultar"
+(OK) "Administração de contas dos bolsistas para o administrador do sistema (...)"
+rever frase... está estranha.
+(OK) uso da palavra "alugado" no último requisito => trocar palavra
+
+
+REGRAS DE NEGÓCIO
+(OK) sistema não tem regras de negócio?
+
+DIAGRAMA DE CASOS DE USO
+(OK) Faltou isolar o sistema (os casos de uso) dos atores com
+um retângulo.
+(OK) No caso de uso administrar bolsistas o melhor seria usar relação de extensão porque os casos de uso adicionar bolsista, editar bolsista e remover bolsista podem ou não ser usados. Ou, é possível trocar o caso de uso para "manter bolsistas" que teria o mesmo sentido
+(OK) Mesmo caso acontece no "Gerar Relatórios"... também deveria
+extender os demais casos de uso.
+(OK) Verificar Banco de Dados não seria um caso de uso. Isto é apenas uma operação do caso de uso. O mesmo para banco de dados... Banco de dados não é um caso de uso, mas sim um repositório de dados que não é representado neste diagrama.
+Representamos apenas as funcionalidades do sistema neste diagrama.
+(+-) No diagrama não deve separar todos os requerimentos isolados... "Requerimento de Dados" já contempla todos os dados que devem ser informados. Os detalhes sobre quais dados devem ou não ser informados deve ficar na descrição do caso de uso.
+(OK) Registrar no banco de dados não é um bom nome para banco de dados... considerar trocar para "Registrar Agendamento", ou algo neste sentido.
+(OK) O caso de uso "Acesso ao Sistema" está fazendo uso do SIGA mas isso não é verdade.
+Na descrição fala que os bolsistas são registrados no próprio sistema. São os dados de quem está reservando que estão registrados no SIGA. Logo, é o caso de uso Reservar espaço que tem relação com o SIGA!
+(OK) O SIGA deve ser representado como um ator e é externo ao sistema! (fora do retangulo que delimita o sistema)
+
+
+
+CASOS DE USO
+(+-) +UCS1: Muito simplificado e contradiz o diagrama de Casos de uso.  No diagrama mostra que é o bolsista que pode verificar no sistema a disponibilidade de horários, e não o reservista. Precisa mencionar que para verificar a disponibilidade é necessário estar autenticado no sistema como pré-condição.
+Precisa detalhar mais passo-a-passo o que deve ir acontecendo.
+
+(OK) +UCS2: novamente contradiz o diagrama... não é o bolsista que faz esse procedimento? o requerente só conversa com o bolsista... mas é o bolsista que pede os dados e registra no sistema. Neste caso ficou melhor detalhado, mas no final deveria indicar quais são os esportes que podem ser escolhidos, ou fazer uma referencia para uma regra de negócio que especifica quais esportes podem ser definidos.
+
+(OK) +UCS3: O inicio faz uma especificação ok. Mas na parte que menciona o que pode ser feito, deveria listar as opções como fluxos alternativos e descrever melhor cada opção. Por exemplo: em adicionar bolsista o admin precisa informar quais dados? o que acontece depois que ele informa os dados? pode acontecer um erro (fluxo de exceção)
+
+(OK) +UCS4: neste caso fez uma descrição do que é cada opção. Na descrição dos casos de uso deve-se ilustrar o passo a passo de como as coisas ocorrem. Neste caso, como o caso de uso vai extender os demais casos de uso sobre cada relatório, vocês nem precisam descrever o que cada opção mostra, isso será descrito lá no caso de uso de cada relatório individual. Até sugiro uma troca para descrever um desses relatórios individualmente ao invés de destacar este caso de uso que mostra como o administrador pode chegar até a opção de cada relatório.
+
+(OK) +UCS5: descrição melhor... identifica o passo-a-passo. Apenas a última frase está estranha (rever): "No qual o CPF é o método de avaliação se aquele CPF pertence a um administrador". (??)
+
+
+REVISÃO:
+- por que não fizeram em um documento formatado? Este documento seria importante estar formatado como um documento 'oficial'
+- a descrição do UCS1 continua bastante simplificado - não descreve quais as opções que o bolsista tem para realizar uma consulta e se pode acontecer algum evento alternativo ou de exceção
+- alguns problemas com português (palavras com letras a mais "perdidas!"
+- obs casos de uso: na descrição de casos de uso adotaram a abordagem através de texto corrido, contudo, a descrição deveria fornecer maiores detalhes sobre como o sistema responde as interações com o usuário - exemplo descrever o que deveria aparecer na tela e quais respostas seriam dadas a cada tipo de interação possivel (ou pelo menos as principais interações)
+
+
+============================================
+PROJETO 3
+Adam, Alexandre, Felipe, Guilherme, Marcos Balatka
+NOTA: 6.9 -> 9.5
+
+Observações Gerais:
+- Faltou um pouco mais de detalhamento nas descrições dos casos de uso.
+
+REQUISITOS
+(OK) R1. a descrição está meio estranho... não parece definir uma funcionalidade. Rever frase.
+(OK) R4. o sistema deverá terá?! Rever frase
+(OK) R6. ficou bastante genérico... talvez seria melhor definir melhor o que seria o controle da parte financeira: registrar pagamentos / Realizar balanço economico / 
+(OK) R7. que tipo de relatório... especificar mais.
+
+(OK) O sistema não tem requisitos não funcionais ou normativos?
+Será que a questão de o sistema requerer o acesso autorizado
+não identifica um requisito de segurança?
+A questão da divisão dos horários de atendimento como múltiplo de 15 não seria
+norma da instituição (normativo?)
+No final da descrição é deixado bem claro que deve ser um sistema para Windows... isso não é um requisito??
+
+
+REGRAS DE NEGÓCIO
+(OK) RN-01 apenas dois niveis distintos de acesso? nao deveria ter mais (ver o diagrama)
+(OK) RN-06 "de a secretária" => "da secretária"
+(OK) RN-07 de onde saiu esta regra de negócio? Na descrição não especifica isso
+(OK) RN-08 Isto seria um requisito funcional (só alterar a posição do texto)
+(OK) RN-09 poderia acrescentar a questão do tempo de consulta ser múltiplo de 15 min
+ou então deve-se especificar isto em outra regra de negócio.
+(OK) RN-10 me parece duvidoso se RN-10 deveria mesmo existir... novamente parece mais um requisito funcional (mas neste caso deveria adaptar um pouco o texto).
+
+
+DIAGRAMA DE CASOS DE USO
+(OK) O cliente paciente não tem acesso ou então não interagem com o sistema
+então deve-se cuidar com a sua ligação a casos de uso. No caso de vocês
+pode-se entender que ele é um sub-ator, mas também pode parecer
+uma interação direta entre cliente e sistema.
+(OK) - O caso de uso login usuário e senha poderia sair e o caso de uso
+acesso ao sistema poderia ser usado como include para os demais casos,
+uma vez que todos requerem acesso autorizado ao sistema.
+
+CASOS DE USO
++UCS2: aqui seria interessante identificar o fluxo de cada opção possível através de um fluxo alternativo: adicionar um novo item ou  alterar um item já existente identificando quais dados deverão ser informados... além disso poderia identificar algumas possíveis fluxos de excessões.
+
++UCS3: deve mencionar que o gerente pode selecionar a data a qual quer emitir o relatório... especificar quais as entradas e quais as saídas (o que deverá ser mostrado na tela para esse gerente).
+
++UCS4: separar os caso de uso... aqui vocês identificam dois casos de uso em um só. Devem escolher entre cadastrar cliente ou cadastrar funcionário, até mesmo porque os dados de cadastro são diferentes e foram representados no diagrama de casos de uso como dois casos de uso isolados. Novamente deve-se destacar quais as informações devem ser informadas para cadastrar um novo cliente ou funcionário (de acordo com o que for escolhido), sendo que no caso de vocês, como já foi criado uma regra de negócio, essas informações podem constar nas regras de negócio.
+
++UCS5: novamente o caso de uso não deixa claro o que o gerente deve informar e o que é mostrado para ele como resultado. Olhar na descrição novamente e ver o que está escrito.
+
+
+
+REVISÃO:
+- faltou corrigir a numeração nas regras de negócio (apenas tiraram)
+- no UCS2 existe um FE sem uso (não aparece a sigla em outro lugar para indicar onde ele pode ocorrer)
+- no UCS4 "(...) pede os nome (...)" problema na concordância
+- não pode acontecer algum fluxo alternativo na UCS4 e 5?
+
+
+
+
+
+============================================
+PROJETO 4
+[Alvaro], Jonathan, Marlon, Ramon, Matheus, Matheus
+NOTA: 5.6 => 5.0* => 9.1
+* entrega em atraso (dia: 12/04/2016) => [-0,6]
+
+Observações Gerais:
+(OK) O sistema não tem regras de negócio??
+(OK) No diagrama de casos de uso, os casos de uso não foram isolados... ou seja, o sistema não foi isolado. Deve-se sempre isolar o sistema com um retângulo.
+(OK) O adminsitrador pode alterar os dados de um funcionário também.
+(OK) O funcionário também deveria poder realizar o pagamento do boleto (de acrodo com oa descrição do sistema)
+(OK) O desconto da tarifa mensal da conta corrente também é um caso de uso, assim como o calculo e atualização do valor da poupança de acordo com a taxa de juros atual.
+(OK) Faltou deixar mais claro a questão de login... não tem caso de uso, nem descrição especificando melhor como é esse login.
+
+REQUISITOS
+(OK) acesso controlado por credenciais seria um requisito de segurança não funcional;
+(OK) não esclarece qual a restrição de limite para operaçõs (apareceria em uma regra de negócio);
+(OK) rever último requisito funcional pois descreve superficialmente como é a operação e não que esta operação deve estar no sistema.
+(OK) de forma geral os requisitos funcionais parecem ser um copy/paste do documento original, mas não deveria ser assim. Os requisitos não explicam como as operações funcionam, somente descrevem que o sistema deve ter tais funcionalidades (REVER)
+
+(OK) Em qual parte da especificação fala que a aplicação deverá ser multi-plataforma? (Linux/Windows)?? E sobre interface gráfica??
+(OK) Nos requisitos não funcionais deveria aparecer as questões de segurança em relação a credencial, ao registro de data e hora de cada operação, e a proteção dos dados salvos no arquivo (MD5).
+
+(OK) Faltaram os requisitos normativos que neste caso ficam um pouco mais claros... são as normas do banco, a questão dos limites, dos jurus e da tarifa mensal deveriam aparecer nesta área.
+
+
+REGRAS DE NEGÓCIO:
+(OK) faltou também especificar as regras de negócio do sistema!!
+ex: tarifas default, tarifa mensal da cc.
+
+
+CASOS DE USO
+(OK) UCS 1: Pré condição 2 deveria ser saldo maior que zero... se tiver saldo mas for insuficiente isso gera um fluxo alternativo... mas não seria uma pré-condição.
+De acordo com a descrição o sistema não verifica o limite de movimentação nem o prazo, mas deveria!!
+* Descrição Superficial - muitos detalhes faltando!! *
+
+(OK) UCS 2: Alterar o ""tamanho"" do limite da conta?? tamanho??
+No passo 5 seria o administrador.
+
+(OK) UCS 3: Novamente, possuir saldo suficiente não seria uma pré-condição para este caso também.... seria um fluxo alternativo em que ocorre um erro pois o saldo é insuficiente (o sistema vai descobrir isso somente depois que o usuário informar os dados)
+Faltou detalhar dizendo que se a data atual for escolhida então o pagamento é feito na hora, se a data for futura o pagamento é agendado e se a data for retroativa gera um fluxo de erro.
+
+(OK) UCS 4: A descrição ficou pouco detalhada. Ficaria melhor se especificasse no passo 2 que o funcionário escolhe um dos depósitos listados, depois (3) funcionario confere o valor depositado (4) usuário confirma valor depositado (fluxo de exceção: valor informado pelo cliente e valor depositado não conferem) (5) sistema efetua o depósito.
+(se achar que é necessário confirmar com senha novamente ok, mas acredito que não seria necessário uma vez que o funcionário já está logado e esta operação pode ser realizada diversas vezes).
+
++ UCS 5: O cliente não precisa especificar a conta que deseja sacar também? (poupança ou cc); o sistema deve também alterar o valor do saldo do usuário!!
+(+) bem lembrado... o sistema deve receber uma notificação da máquina confirmando se há notas suficientes
+
+
+REVISÃO:
+- Boas alterações na documentação dos casos de uso.
+- UCS4 FA3a - e o que acontece se os valores não conferem? / o que deve ser feito.
+
+
+============================================

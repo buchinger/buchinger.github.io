@@ -1,0 +1,592 @@
+TRABALHO 2 - Requisitos e Casos de Uso
+--------------------------------------
+
+
+
+Adriano Zanella Jr.
+[9,0]
+
+	REQUISITOS: listou apenas os requisitos funcionais, não colocou os requisitos não funcionais e normativos.
+
+	REGRAS DE NEGÓCIO: RN-01 não é especificada no texto; RN-07 não indica diretamente uma regra de negócio (a questão é: examplares de um mesmo livro devem ficar no mesmo local). Não foi adicionado nenhum texto falando sobre os generos previamente estipulados.
+
+	DIAGRAMA CASOS DE USO: ok, apenas o 'Listar Livro' herdando de 'Filtrar por Titulos' e 'Filtrar por genero' ficou estranho. Melhor seria extender para representar a situação.
+
+	CASOS DE USO: Os códigos de fluxos alternativos devem ser colocados no fluxo principal (1º e 2º caso de uso). No 2º caso de uso, porque usar o nome ao invés do número de carteirinha do usuário? 
+
+
+***************************************
+
+[6,0]
+	As relações entre as entidades estão representando ações entre elas. Neste modelo você deve projetar apenas as relações entre os dados (não teria muitas das relações colocadas no diagrama). Além disso, através do modelo não há como representar as situações de empréstimo, data de devolução, ou reserva, pois tudo esses aspectos foram modelados como relações sem atributos.
+
+
+***************************************
+
+[7.5]
+Possui os principais objetos, dados e operações.
+- Localização é um atributo de titulo e nao exemplar
+- As operações foram associadas às classes de quem realiza, mas em vários casos isso não está correto.
+- o atributo exemplar em Titulo deveria ser um vetor ja que um titulo pode ter vários exemplares.
+- Não foi definida uma classe principal para o sistema. Tem acervo... mas acervo só tem um atributo que é titulo (não representa o sistema)
+
+
+***************************************
+
+[]
+
+
+
+
+
+
+---------------------------------------
+
+
+
+Bruna Tavares; Gustavo Rodrigues; Marcos V. Cavalheiro
+[8,2]
+
+	REQUISITOS: Utilizaram o conceito aluno, mas na descrição do projeto não há descrição de que os usuários serão apenas alunos;    Colocaram vários requisitos normativos como não funcionais (mas pelo menos os mencionaram no documento);    o que quiz dizer com: "O sistema dedeverá ser iniciado com essa página sem restrição"??;   Os requisitos normativos 2 e 3 foram criados sem base no texto.
+
+	REGRAS DE NEGÓCIO: As frases de descrição de regras de negócio devem ser auto-contidas (algumas estão dependendo do título para o seu entendimento) 
+
+	DIAGRAMA CASOS DE USO: A relação entre atores não ficou correta... deveria ser a seta de generalização;   O caso de uso Excluir livros vai ser incluído no caso de uso Emprestar Livros??;   Foram colocadas muitas relações de extensão que não parecem indicar o que realmente acontecerá no sistema;    Poderiam ter adicionado um caso de uso para o login e usado um include para os casos de uso do bibliotecário.
+
+	CASOS DE USO: No primeiro caso de uso o sistema é um ator secundário? mas o sistema não é um ator no diagrama;    Nos casos de uso voces devem adicionar as informações relevantes... como por exemplo, quais são os campos do formulário? Se alguem receber essa documentação do caso de uso deve conseguir codificar essa parte do sistema somente com o que está escrito neste documento completo;   O segundo caso de uso descrito ficou bom. Apenas no final poderia ter alterado ou omitido o passo 8, pois acredito que vocês não vão fazer o comprovante ser impresso, certo?
+
+
+***************************************
+
+[8.0]
+	No diagrama ER a prateleira está relacionada com a categoria - seria melhor relacioná-la com o livro ou o exemplar; Não se deve colocar as ações de uma entidade de dados sobre outra (ex.: bibliotecario Cadastra Exemplar, Bibliotecario Modifica Exemplar, Bibliotecário Cadastra Cliente); Pesquisa livre não seria uma entidade de dados; Consulta / Renovação / Empréstimo como Generalização de Exemplar?!?! 
+
+
+***************************************
+
+[7.5]
+- Reserva é uma relação apenas com livro? MAs não tem o código do aluno tambem?
+- Idem para o empréstimo.
+- Porque "Pesquisar" tem um relacionamento com Pessoa?
+- Não foi feita uma distinção entre livro e exemplar... vão duplicar todos os dados quando tiver dois exemplares de um mesmo livro?
+- Entrega em atraso (1o envio de arquivo errado)
+- As operações foram associadas às classes de quem realiza, mas em vários casos isso não está correto.
+- Não foi definida uma classe principal para o sistema que possui os livros, os registros de empréstimos, reservas, logins etc.
+
+
+
+***************************************
+
+[7.5]
+- Emprestar: Os nomes dos estados estão um pouco estranhos (estado senha do aluno... o que seria isso? parece mais um nome para um evento "aluno digita sua senha");
+- Renovar: não consideraram a possibilidade de que o livro não pode ser renovado caso alguem tenha solicitado reserva...
+- Reservar: novamente não consideraram alguns situações importantes: um livro só pode ser reservar caso o mesmo esteja emprestado e não seja o primeiro exemplar. 
+- Diagrama de fluxo de dados: fizeram vários níveis - muito bem, contudo encontrei apenas um repositório de dados: "livros". E os dados dos alunos/clientes, registros de empréstimos, etc... não são importantes ou não existem?
+
+***************************************
+
+[0.0] Interfaces não entregue
+
+
+
+
+
+
+---------------------------------------
+
+
+
+Christopher - Edenilson 
+[8.8]
+
+(Entrega em arquivo impresso)
+	REQUISITOS: Nos requisitos não funcionais não havia necessidade de inventar requisitos. Não foi explicitada nenhum requisito de desempenho;  Já no requisito de usabilidade a frase indica que o software já está pronto ("O software é de fácil utilização e muito intuitivo"), mas na verdade não está;   Alguns requisitos não foram elencados na lista (ex: 15 dias para a reserva)
+
+	REGRAS DE NEGÓCIO: Cuidar com os termos livro e exemplar... em alguns casos parece confundir os dois termos (Ex. RN03). 
+
+	DIAGRAMA CASOS DE USO: Da maneira que foi desenhado o diagrama, para que o bibliotecário faça uma consulta filtrando por título ou gênero, ele deverá deslogar do sistema e entrar como usuário normal;   Poderiam ter adicionado um caso de uso para a questão do login que é um pré-requisito para todos os casos de uso do bibliotecário.
+
+	CASOS DE USO: Primeiro caso de uso ok, mas lembrem-se de colocar alguma referência dos fluxos de exceção no fluxo principal (por exemplo a sigla);  No segundo caso de uso os números da sequencia estão errados; No passo 4 do fluxo principal poderia se focar nas ações que o bibliotecário terá que fazer, por exemplo, dizer o que ele precisa digitar (quais são as informações)
+
+
+***************************************
+
+[10.0]
+	Muito bem. 
+
+
+***************************************
+
+[9.0]
+A carteirinha do usuário é o atributo "registro"?
+As classes Empréstimo não ilustram todos os dados necessários (data de empréstimo / data de devolução)
+
+
+***************************************
+
+[7.5]
+- Emprestar: Alguns nomes de estados estão um pouco estranhos... dão noção de evento ao invés de um estado do sistema, por exemplo: "visualizar acervo".. isto indica uma ação e não um estado;
+- Renovar: Novamente a questão dos nomes e não consideraram a possibilidade de que o livro não pode ser renovado caso alguem tenha solicitado reserva...
+- Reservar: Novamente não consideraram alguns situações importantes: um livro só pode ser reservar caso o mesmo esteja emprestado e não seja o primeiro exemplar. 
+- Diagrama de fluxo de dados: ok... usaram um único nível para cada operação, mas essas operações são mais simples mesmo.
+
+
+***************************************
+
+[10.0]
+A interface atendeu a todos os requisitos
+
+
+
+
+---------------------------------------
+
+
+
+Cleber e Willian
+[6.8]
+
+	REQUISITOS: Em requisitos não funcionais: "sistema deve funcionar online"?! Esse requisito não foi especificado, certo?;   restrição de acesso para qual usuário? (não ficou claro)
+
+	REGRAS DE NEGÓCIO: não foram apresentadas. 
+
+	DIAGRAMA CASOS DE USO: As palavras utilizadas são muito genéricas, por exemplo: cadastrar - cadastrar o que? livros? usuários? novos gêneros? A seta utilizada para representar a relação entre bibliotecário e usuário não é a correta (não está representando generalização). Como o bibliotecario precisa fazer login para usar o sistema seria interessante adicionar um caso de usa para login que é incluido em todos os outros casos de uso do bibliotecário.
+
+	CASOS DE USO: no 1º caso de uso: o sistema da biblioteca não é um ator;  no 2º caso de uso: não deixa claro quais seriam os dados que o bibliotecario precisa digitar para cadastrar o livro.
+
+
+***************************************
+
+[9.5]
+	ok. Só faltou a relação de reserva que um usuário tem com um livro (similar ao emprestar que foi colocado no modelo)... e... a carteirinha do
+usuário deveria ser o atributo identificador desta entidade (então bolinha pintada)
+
+
+***************************************
+
+[9.1]
+- Em Biblioteca, acervo, usuarios e bibliotecarios sao ArrayList de que?
+- O emprestimo pode ficar assim, mas isso ilustra que haverá uma instancia de Livro e uma instancia de Usuário dentro de um objeto Emprestimo. Isso gera repetição de informações.
+- A classe Emprestimo não tem relação com a classe Biblioteca... se for assim, como o renovar livro vai funcionar?
+- Atraso de um dia na entrega (-0.4)
+
+
+***************************************
+
+[6.0] - [5.0]*
+- Emprestar: Alguns eventos ficaram com o nome trigger (padrão do software)
+- Renovar: os nomes dos eventos não refletem os eventos reais: para poder renovar um livro, o livro não precisa estar disponível, mas sim sem solicitações de reservas por outros usuários. Da mesma forma o evento "Livro indisponível" poderia ser alterado para "Livro reservado".
+- Reservar: não consideraram que um livro só pode ser reservar caso não seja o primeiro exemplar (pelo menos não ficou claro isso pelo evento: "Livro Disponível". Na verdade, acredito que este nome para este evento não ficou de acordo, visto que já existe um evento nomeado: "Livro Não Emprestado" o que realmente leva a um estado de cancelamento da reserva. Por outro lado, um outro evento seria: "Livro Emprestado" (e não "livro disponível") indicando que o livro está emprestado e que um usuário pode reservá-lo.
+- Diagrama de fluxo de dados: o diagrama de fluxos não parece um diagrama de fluxos. Acredito que usaram um modelo diferente ou confundiram o modelo.
+* Entrega em atraso (Willian confirmou que ele foi o responsável pelo atraso e que o desconto deveria ser sobre sua nota).
+
+***************************************
+
+[8.0]
+- Segunda versão entregue em atraso
+- Os menus estão um pouco confusos... não consigo descobrir de modo simples quem está com qual livro... a única fonte de consulta é o botão que leva a uma lista com todos os empréstimos (um log), mas não consigo saber qual deveria ser a data máxima de devolução.
+- Existem livros com mesmo código. Consegui inclusive cadastrar novos livros com o mesmo código...
+
+
+
+
+---------------------------------------
+
+
+
+Gabriel Conejo; Gustavo Diel
+[7,8]
+
+	REQUISITOS: em R3 parece que o sistema deve ter uma funcionalidade que permita o próprio usuário emprestar e reservar (operações que só o bibliotecário poderia fazer); Alguns requisitos não funcionais foram adicionados por conta própria... o documento não previa alguns dos requisitos destacados (RNF1 e RNF3 e Requisitos normativos); Faltaram alguns requisitos não funcionais (ex. 15 dias como prazo de empréstimo)
+
+	REGRAS DE NEGÓCIO: ok
+
+	DIAGRAMA CASOS DE USO: O diagrama está um pouco estranho. O relacionamento entre os atores seria de generalização (foi utilizada outra seta); os casos de uso do admin: 'Gerencia condição e produtos' e 'Atualizar dados' ficaram com nomes muito genéricos que podem não expressar de forma direta para que servem; a relação de extensão entre 'Adicionar Livros' e 'Atualizar Dados' está estranha.
+
+	CASOS DE USO: Acredito que o caso de uso 1 não seria um dos mais complicados. De qualquer forma o caso de uso 1 está muito resumido e o que está descrito não reflete em total o diagrama de casos de uso. O caso de uso 2 também está muito resumido e possivelmente não descreve todos os passos necessários. Todavia a estrutura da descrição dos casos de uso ficou boa.
+
+
+***************************************
+
+[7.5]
+	Foi utilizada uma notação um pouco diferente da convencional. Os atributos das entidades geralmente não são ligados por linhas com setas... Já com relação ao esquema montado: na descrição o atributo importante do usuário comum é sua carteirinha, mas cade ela no diagrama? seria o login?..... A relação entre bibliotecário e usuário (Gerencia) não agrega valor no diagrama..... Não há uma relação de empréstimo entre o usuário e o livro, nem de reserva de livro.
+
+
+***************************************
+
+[8.2]
+- Colocar as operações relacionadas a ações de botões (não necessário). Se colocar isso, teria que colocar os atributos relativos aos botões também;
+- Em Usuario, os livros "pego" deveriam ser um vetor ou arraylist, ou só pode pegar um livro por vez?
+- encontrei a operação emprestar livro, mas e a operação renovar livro, reservar livro? E para cadastrar um novo livro, um novo usuário, um novo adm? E uma consulta filtrando por genero, e filtrando por título?
+
+
+***************************************
+
+[5,5]
+- Diagramas de estados: está muito superficial... deveriam adicionar vários detalhes sobre cada operação, como por exemplo, ao reservar um exemplar, o sistema deve verificar se é o primeiro exemplar e se não há reservas para o mesmo.
+- Diagrama de Fluxo de dados: (1) na renovação o dado da nova data de devolução é armazenado junto aos dados do Cliente? não seria em outro depósito de dados (ex.: livros); (2) Reserva ok; (3) Para emprestar um livro armazena-se apenas o nome? (nome de quem?); (4) no diagrama das operações de renovação, empréstimo e reserva, o bibliotecário deveria ser um ator ativo, mas ele aparece isolado e relacionado somente com o processo "emprestar".
+
+***************************************
+
+[10,0]
+- Após a inclusão de um usuário o sistema está predefinindo um texto para o campo de telefone. Na verdade deveriam usar setText(""); ou seja, sem texto.
+- Na tela 2 percebi um problema em relação ao código... mesmo com o jdk1.8 última versão, a linha 269 apresenta um erro de compilação. Tive que alterar para um foreach para funcionar. Qual versão do java vocês estão utilizando?
+
+
+
+
+
+---------------------------------------
+
+
+
+Henrique Parucker - Leonardo Castro
+[6.0]
+
+	REQUISITOS: Alguns requisitos não foram adicionados no documento. Não destacaram também requisitos não funcionais ou requisitos normativos (Na verdade os requisitos não foram categorizados, mas os que foram descritos seriam requisitos funcionais) [-1.3]
+
+	REGRAS DE NEGÓCIO: algumas regras de negócio indicadas na verdade não seriam regras de negócio (RN3, RN4). Faltou colocar várias regras de negócio que seriam importantes para o sistema [-1.5]
+
+	DIAGRAMA CASOS DE USO: O diagrama de caso de uso ilustra que é o usuário que realiza a reserva de livros e o empréstimo de livros, mas na verdade deveria ser o administrador (ou bibliotecário). Faltou destacar a questão do login para o administrador através de um caso de uso para isto; e faltou adicionar dois casos de uso que extendem o caso de uso verifica acervo, pois existe a possibilidade de filtrar por título ou por gênero. [-1.0]
+
+	CASOS DE USO: Os casos de uso ficaram bastante enxutos sem muitos detalhes que seriam importantes para um programador desenvolver esta parte do sistema. Por outro lado, os fluxos alternativos mais importantes foram destacados. [-0.2]
+
+
+***************************************
+
+[8.5]
+	O relacionamento Cadastra entre bibliotecário e usuário_normal não seria um relacionamento relevante em relação aos dados;   A relação "Acervo" também está estranha;   Há dois relacionamentos de reserva;     No relacionamento de empréstimo não há um atributo para indicar a data de devolução ou de empréstimo (que seria importante para o sistema);
+
+
+***************************************
+
+[8.8]
+- Os dados e métodos básicos das classes estão ok.
+- As operações foram associadas às classes de quem realiza, mas em vários casos isso não está correto (é o usuário que realiza o emprestimo para ele mesmo?)
+- Algumas operações estão faltando: como consigo filtrar os livros por titulo ou por genero? Como consigo renovar um livro?
+
+
+***************************************
+
+[8,9]
+- Emprestar: Existem dois estados repetidos - "Verificando" - poderia aglutinar em apenas um e fazer três eventos partindo dele. O evento "Disponível" não deixa claro o que seria 'estar disponível'. 
+- Renovar: muito bem, só faltou talvez um evento no estado "Mensagem de renovação possível" que seria cancelar renovação.
+- Reservar: O que seria "Reserva no período inválido". Alguns eventos poderiam/deveriam estar mais claros ou ser adicionados: "livro válido"/"livro inválido"/"O livro não está emprestado" (ou seja, está disponível e portanto não pode realizar reserva)/(...).
+- Diagrama de fluxo de dados:
+   + Reserva: para reservar um livro não deveria registrar os dados do usuário também?
+   + Empréstimo: idem...
+   + Renovar: muito bem... para renovar altera-se apenas o depósito de dados de "livros emprestados".
+   (*) faltou um depósito de dados de usuários... o bibliotecário acessaria estes dados para realizar as operações de empréstimo, reserva e renovação.
+   (**) Alteração de dados NULL em Livro??
+   + Remover livros não tem um ator envolvido (o livro se remove sozinho?!)
+   + Alterar Cadastro: idem...
+
+
+
+***************************************
+
+[9,3]
+- Da maneira que foi implementada, dois usuários podem acabar recebendo o mesmo número de carteirinha (carteirinha baseada no tamanho do nome? mais facil e seguro seria um contador)
+- Faltou informações para o professor conseguir testar... tive que vasculhar o código para encontrar que o número de carteirinha usado no teste seria 12345
+- a questão dos dias não deu muito certo pois não aumentou os quinze dias contando a partir da data atual
+
+
+
+---------------------------------------
+
+
+
+Jonas Pollnow
+[9,4]
+
+	REQUISITOS: ok.
+
+	REGRAS DE NEGÓCIO: ok.
+
+	DIAGRAMA CASOS DE USO: atribuiu alguns casos de uso que seriam do bibliotecário para o usuário comum (reserva, empréstimo); faltou identificar o caso de uso de login. que seria uma inclusão para os casos de uso do bibliotecário (administrador); faltou um caso de uso para realizar o empréstimo.
+
+	CASOS DE USO: Faltou indicar com as siglas em qual parte do fluxo principal pode acabar caindo em um fluxo alternativo ou de exceção.
+
+
+***************************************
+
+[9,5]
+Entrega em atraso (mandou errado) => demorou duas semanas para perceber (-0.5)
+
+
+***************************************
+
+[9,8]
+- O livro tem um número inteiro de exemplar... isso seria um código? se for então o sistema vai replicar os dados dos livros para cada exemplar?
+- Não foi adicionada uma classe para o sistema que contem um conjunto de usuários, administradores e livros. Essa classe também teria as operações do sistema.
+
+
+***************************************
+
+[6,0]
+ (*) atraso de dez dias na entrega.
+ (*) criou um diagrama de sequencia ao invés de um diagrama de estados para as operações de empréstimo, renovação e reserva de livros.
+- Diagrama de fluxo de dados:
+   + Cadastro / Atualização / Remoção de Livros: ok
+   + Empréstimo / Reserva / Renovação de livros: para fazer empréstimos não é necessário registrar os dados do livro e do usuário que está emprestando?! Faltou isto...
+
+
+
+***************************************
+
+[7,5]
+- Entrega em atraso
+- Na interface de cadastro de usuário o sistema mostrou nada no campo de código (de carteirinha) gerado para o usuário. (campo em branco
+- No empréstimo faltou colocar as funcionalidades, só tem a tela.
+
+
+
+
+
+---------------------------------------
+---------------------------------------
+
+
+
+Lucas Gutierrez
+[8.5]
+
+	REQUISITOS: Escreveu apenas os requisitos funcionais, mas não os não funcionais e os normativos (faltou por exemplo: o acesso do bibliotecário será mediante senha de oito símbolos).
+
+	REGRAS DE NEGÓCIO: RN-01 teve parte de seu conteúdo inventado; nem todas as regras foram documentadas (ex.: o primeiro exemplar não pode ser emprestado).
+
+	DIAGRAMA CASOS DE USO: Bom, mas não ficou claro no diagrama que existe uma consulta que usa um filtro por título e uma consulta que usa um filtro por gênero da obra; além disso, os casos de uso do administrador/bibliotecário deveriam ter alguma relação com um caso de uso que seria de login de acesso.
+
+	CASOS DE USO: primeiro caso de uso o livro precisa ser identificado pelo sistema? (isso seria questão do fluxo de exceção).  Faltou destacar onde o FE-01 pode acontecer durante o fluxo principal. Para o segundo caso de uso listou quais campos devem aparecer e listou os dois principais fluxos alternativos/exceção = muito bem.
+
+
+***************************************
+
+[10.0]
+	Muito bem. Não sei se a opção de relacionar clientes com os livros seria a melhor solução, pois isso pode gerar uma dificuldade posterior em relação à usabilidade do sistema (ex: se eu reservar um livro, todos que tem exemplares emprestados não poderão renovar e deverão devolver o livro).
+
+
+***************************************
+
+[7.1]
+- O bibliotecario nao tem uma senha de acesso
+- muitas operações foram colocadas para as entidades/classes erradas => é o sistema que permite visualizar o acervo, filtrar as obras, cadastrar novas obras e usuários/bibliotecarios.
+- Não criou uma classe principal para o sistema que contem as operações principais e os atributos principais do sistema.
+- Não distingue livro de exemplar... como vai funcionar o controle para o empréstimo se não há esta distinção? Vai replicar os dados de cada livro?
+- Atraso na entrega em 1 dia (-0.4)
+
+***************************************
+
+[8,6]
+- Emprestar: OK
+- Renovar: ok
+- Reservar: ok, talvez tenha faltado a descrição de que o exemplar 1 também não pode ser reservado.
+- Diagrama de fluxo de dados:
+   + Cadastro / Atualização / Remoção: deveria ser de livros e não de clientes...  De qualquer forma existe alguns problemas: é o cliente que se cadastra? não seria o bibliotecário que cadastra o cliente? (mesma coisa para remoção e atualização)
+   + Empréstimo / Renovar / Reservar: Existe um ator Livro? (não existe este ator). Não seria o ator Bibliotecário, ao invés do ator Cliente, que realiza os processos de empréstimo/renovação/reserva para um determinado cliente? Além disso, poderia deixar mais claro que os dados do empréstimo são: dados do livro + dados do cliente.
+   + Renovar: muito bem... para renovar altera-se apenas o depósito de dados de "livros emprestados".
+   (*) faltou um depósito de dados de usuários... o bibliotecário acessaria estes dados para realizar as operações de empréstimo, reserva e renovação.
+   (**) Alteração de dados NULL em Livro??
+   
+
+***************************************
+
+[9,3]
+- Tela 1 => ao invés de criar um novo objeto usuário sempre que a pessoa clicar no botão cadastrar, poderia criar criar esse usuário somente se os dados estivessem todos corretos. Neste caso, poderia ter criado um método construtor que já define a maioria das informações de acordo com os parâmetros passados. Aqui é um protótipo ainda, mas já deve começar a pensar que deve ser feita alguma validação para verificar se um código de carteirinha gerado randomicamente já não foi dado a uma outra pessoa.
+- Tela 2 => aqui, ao invés de mostrar quantos dias falta para devolver o livro, mais interessante seria mostrar uma data fictícia para o usuário informando até qual dia ele pode devolver.
+
+
+
+
+
+---------------------------------------
+
+
+
+Luciani Regina
+[8,5]
+
+	REQUISITOS: Identificou apenas os requisitos funcionais... faltaram os não-funcionais e normativos.
+
+	REGRAS DE NEGÓCIO: A informação da RN-01 não precisaria/deveria estar ali; As informações necessárias para o cadastro de um livro não deveriam estar nas regras de negócio (RN-03); o mesmo se aplica para os dados dos usuários (RN-08); As regras de negócios 15 e 16 ilustram uma funcionalidade... não deveriam existir.
+
+	DIAGRAMA CASOS DE USO: A seta usada entre atores teria que ser de generalização (foi utilizada outra); deveria ligar o bibliotecário a todos os
+casos de uso que incluem senha e não ligar o ator exclusivamente ao caso de uso de senha; 
+
+	CASOS DE USO: ok. Apenas talvez a sigla FA-01 poderia ser colocada no item 4 do fluxo principal no segundo caso de uso... parece que ali seria a posição real dele... 
+
+
+***************************************
+
+[8.5]
+	A entidade Livros duplica alguns atributos que foram colocados para os relacionamentos (ex: Dt. Reserva e Dt. Devolução), o mesmo acontece com o código de carteirinha da entidade Usuário.    O relacionamento renovar parece indicar mais uma ação do que um relacionamento entre os dados (a renovação não seria apenas uma modificação na data de devolução em uma relação de empréstimo?).    De forma semelhante, devolver não seria um relacionamento entre os dados, apenas uma ação que finaliza um empréstimo.     A não separação entre livro e exemplares possivelmente vai gerar sobrecarga de dados no sistema (dados repetidos várias e várias vezes: mesmo título, mesmo ano, mesmos autores....)
+
+
+***************************************
+
+[8.5]
+- As operações e dados principais foram adicionados.
+- A classe principal para o sistema que contem as operações principais não ilustra os atributos principais: coleção de usuários, bibliotecarios e livros: as setinhas dão a sugestão, mas foi utilizada a seta de dependência e alguns números não estão corretos (invertidos);
+- Não distingue livro de exemplar... como vai funcionar o controle para o empréstimo se não há esta distinção? Vai replicar os dados de cada livro?
+- Datas seriam melhor representadas com o tipo de dado Date ao invés de String
+- Algumas operações deveriam estar na classe Livro também, pois como os atributos são privados a classe principal nao terá acesso à esses dados.
+
+
+***************************************
+
+[9,2] 
+- Emprestar/Renovar/Reservar: OK, só faltou deixar um pouco mais claro por que um livro não pode ser emprestado/renovado/reservado (quais seriam os motivos para um livro não poder ser emprestado, por exemplo). Ficou vago.
+- Renovar: Em "Modifica a data de devolução acrescentando 15 dias" poderia adicionar que são 15 dias a partir da data atual e não da data de devolução.
+
+- Diagrama de fluxo de dados:
+   + Ok, contudo, da forma que foi modelado no diagrama, tanto empréstimos como reservas são todas armazenadas nos registros dos livros... Não está errado, mas é realmente isso que vai fazer??? Uma outra possível solução seria criar um depósito de dados para empréstimos e outro para reservas.
+
+
+
+***************************************
+
+[9,0] Luciani e Nathália
+- Cenário 1: apenas dois detalhesinhos => talvez o campo de complemento deveria ser um pouco maior já que o complemento do endereço pode ser grande / a geração de número de carteirinhas está ok, mas de alguma forma o software poderia verificar se não está sendo cadastrado um usuário pela segunda vez (talvez um número de cpf, ou rg, pois pelo nome não é interessante validar).
+- Cenário 2: a separação em duas janelas ficou interessante (talvez teria que reconsiderar se vai deixar ou nao aberta a primeira janela onde digita-se o número da carteirinha). Contudo encontrei alguns problemas: (1) não selecionei todos os livros e cliquei em renovar e mesmo assim ele tentou renovar todos os livros ; (2) a data de renovação foi sempre aumentando em 15 dias, e inclusive chegou a assumir a data 8/13/2016 hehehe. Verificar estes problemas.
+
+
+
+---------------------------------------
+
+
+Nathália Cezar; Peter Neimann
+[5.8]
+IMPRESSO
+
+	REQUISITOS: Em R1 e R2 não indicaram quais gêneros seriam e quais dados importantes seriam estes;   R4 na verdade seria um requisito não funcional de segurança, certo?;    Não destacaram os Requisitos não funcionais e normativos;    um quantidade significativa de requisitos não foi listada no documento.
+
+	REGRAS DE NEGÓCIO: Geralmente os dados que devem ser digitados são colocados na própria descrição do caso de uso e não como uma regra de negócio;   A regra de negócio RN-05 foi inventada... não foi mencionada no documento de solicitação do sistema;    RN-06 não seria uma regra de negócio;    faltou listar algumas regras de negócio importantes, por exemplo: (1) 1º exemplar de um livro não pode ser emprestado; (2) Período de empréstimo: 15 dias. (3) Só pode reservar livro se não houver um exemplar disponível (4) Não se pode renovar um livro que foi reservado para outro usuário. (...)
+
+	DIAGRAMA CASOS DE USO: os atores do diagrama não foram identificados, não dá para saber quem é quem;    Alguns casos de uso não estão ok: 'Usa software', 'gerenciar pagamentos' (não foi mencionado nada sobre pagamentos);    os casos de uso do sistema não foram delimitados com um retângulo (ou se foram, os atores passaram a fazer parte do sistema também :p)
+
+	CASOS DE USO: No primeiro caso de uso remete novamente a ideia de comprar livros, que não faz parte do escopo do problema;   Não se identificou onde ocorrem os casos de fluxo de exceção e fluxo alternativo no fluxo principal;     no fluxo principal colocou a questão do login, mas o ideal seria se o login fosse um outro caso de uso e uma pré-condição para este caso de uso (neste caso ficaram faltando alguns fluxos alternativos que deveriam prever se o bibliotecário não digitasse a senha correta, por exemplo;      No segundo caso de uso novamente vários problemas similares foram cometidos.
+
+
+***************************************
+
+[7.5]
+	Não há necessidade de colocar entidades como Empresa, Requisitos, Software, Sistema e Funções (a menos que seja muito importante representa-los no sistema);   Em empréstimo foi adicionado o atributo preço que não foi mencionado pela descrição do problema. Nesta mesma entidade há também o atributo nomeLivros... para que seria isso? (o nome do livro já vem pelo relacionamento com indireto com a entidade Livros);    mesma coisa para Reserva;       Cliente não tem o código de carteirinha como atributo chave conforme descrito no documento.     O ideal seria separar livros em: livros e exemplares porque um livro pode ter muitos exemplares... da forma como está terá muita replicação de dados (mesmo título, ano, e autores para cada livro igual).
+
+
+***************************************
+
+[7.0]
+- muitas operações foram colocadas para as entidades/classes erradas => é o sistema que permite visualizar o acervo, filtrar as obras, cadastrar novas obras e usuários/bibliotecarios etc.
+- Não criaram uma classe principal para o sistema que contem as operações principais e os atributos principais do sistema.
+- Não distingue livro de exemplar... como vai funcionar o controle para o empréstimo se não há esta distinção? Vai replicar os dados de cada livro?
+- Adicionaram uma classe adicional chamada Sist Financeiro... apesar de não ter sido descrito ficou interessante o metodo que calcula a multa, em contra partida, tem um atributo nome que é inteiro, que não faz muito sentido.
+- Não foi adicionado uma operação que filtra os livros por titulo ou genero.
+
+
+***************************************
+
+
+[7,2] - Apenas Nathália
+- Emprestar/Renovação/Reserva: Muito bem, fez bem passo a passo. Contudo, note que ao encontrar o livro na procura, somente isso não significa que o livro pode ser emprestado/renovado/reservado. Precisaria adicionar, por exemplo, algumas transições e estados indicando que os exemplares do livro podem já estar emprestados ou reservados e por isso não poderiam ser emprestado.
+ (*) o que seria "Digita no campo estado "d", "Digita no campo do livro estado "e"???
+
+- Diagrama de fluxo de dados:
+   + Cadastro / Atualização / Remoção: O bibliotecário apenas cadastra livros e clientes. Este mesmo bibliotecário (ator) deveria ter relação com os processos alterar livros e remover livros, pois é ele que realiza esses processos. O processo "Remover" (livros) altera o depósito de dados "Livros", logo, precisaria ter uma seta de "Remover" para "Livros".
+   + Empréstimo / Renovar / Reservar: Da maneira que foi colocado quem realiza a reserva, a renovação e o empréstimo é um ator Cliente... mas na verdade quem faz isso é o bibliotecário. O bibliotecário recebe os dados do repositório de dados "Cliente" e usa estes dados para realizar os processo de reserva, renovação e empréstimo. Note ainda que essas três operações não realizam registro algum. Deveria haver alguma seta saindo destes processos em direção a um repositório de dados que armazenaria estas informações (poderia ser por exemplo um novo repositório de dados que contem os dados de empréstimos e outro que contem os dados de reservas).
+
+
+
+
+
+---------------------------------------
+---------------------------------------
+
+
+
+Pablo Si
+[9.0]
+
+	REQUISITOS: Ok... faltou apenas colocar alguns requisitos (por exemplo: a questão dos 15 dias de empréstimo vai nos requisitos e nas regras de negócios.
+
+	REGRAS DE NEGÓCIO: Geralmente os dados que devem ser digitados são colocados na própria descrição do caso de uso e não como uma regra de negócio;
+
+	DIAGRAMA CASOS DE USO: No diagrama não foi especificado um caso de uso para a questão do login... não fica claro que as operações do bibliotecário exigem um credenciamento de acesso;    outros casos de uso que faltaram foram aqueles que ilustram que existe a possibilidade de filtrar por título ou por gênero.
+
+	CASOS DE USO: No 1º caso de uso, não seria mais fácil o sistema pedir pelo código do livro e procurar pelo código (o usuário já teria o livro na mão e está querendo fazer o empréstimo);     No 2º caso de uso ficou boa a questão de pedir por genero ou título, porém ficaria melhor se fosse colocado em um único passo do fluxo principal, onde o bibliotecário decide se digite o título ou escolhe um gênero (ou ambos).
+
+
+***************************************
+
+[9.2]
+	No diagrama as entidades relacionamentos (BookCopy / Book Lending /  LibraryUser / Reserve devem ser ligadas à outras entidades por relacionamentos. Em alguns casos, por exemplo Reserve, na verdade seria uma relação (entre Book e User) de reserva e não uma entidade relacionamento;     O que seria o booklending_id na entidade BookCopy? ficou estranho...;     De modo geral o diagrama está coerente, só a reserva e o empréstimo que deveriam estar associados a um User e não ao LibraryUser (este só faz a operação).
+
+
+***************************************
+
+[9.0]
+- No modelo enviado e gerado a maioria das operações e atributos não aparecem.
+- usuário não tem matricula
+- O modelo ficou interessante mas o ocultamento dos atributos e das operações deixam a leitura mais complicada
+
+
+***************************************
+
+
+
+
+
+
+---------------------------------------
+---------------------------------------
+
+
+
+Rafael Fabian Ruske
+[9,7]
+
+	REQUISITOS: Alguns requisitos não funcionais foram adicionados por conta própria... o documento não previa alguns dos requisitos destacados. Já no caso do acesso às funcionalidades de bibliotecários, faltou destacar que a entrada seria via senha de 8 caracteres. Faltaram alguns requisitos não funcionais (ex. 15 dias como prazo de empréstimo).
+
+	REGRAS DE NEGÓCIO: 
+Não foi adicionado nenhum texto falando sobre os generos previamente estipulados.
+
+	DIAGRAMA CASOS DE USO: ok
+
+	CASOS DE USO: Os códigos de fluxos alternativos devem ser colocados no fluxo principal (1º e 2º caso de uso). No segundo caso de uso ver problemas de escrita em FE-01.
+
+
+***************************************
+
+[9,9]
+	Muito bem. Não sei se a opção de relacionar Usuário com os Livros seria a melhor solução, pois isso pode gerar uma dificuldade posterior em relação à usabilidade do sistema (ex: se eu reservar um livro, todos que tem exemplares emprestados não poderão renovar e deverão devolver o livro);     Na descrição diz-se que os exemplares de um mesmo livro são guardados na mesma estante, então o ideal seria um relacionamento de Livro com Estante.
+
+
+***************************************
+
+[9.7]
+- Adicionou muitos detalhes, alguns até mesmo (possivelmente) desnecessários: ex: estado.
+- Não criou uma classe principal para o sistema que contem as operações principais e os atributos principais do sistema. O acervo seria o mais próximo disso, mas teria que ter uma lista de usuários e bibliotecários também, além dos métodos de emprestar livro, reservar livro, etc.
+
+
+***************************************
+
+[8,8]
+- Emprestar/Renovação/Reserva: Muito bem, fez bem passo a passo e o nome dos estados está coerente.
+- Emprestar: OK. Muito bem, lembrou de considerar inclusive o caso da reserva. Se tem reserva deve remover esta reserva ao emprestar o livro.
+- Renovar: ok. Muito bem.
+- Reservar: Aqui faltou alguns detalhes... um livro só pode ser reservado se não existir um exemplar disponível para empréstimo e se o exemplar escolhido não for o primeiro.
+
+- Diagrama de fluxo de dados:
+   + Cadastro / Atualização / Remoção: A operação de cadastro de livro e de exemplar recebe dados deveria receber os dados do ator Bibliotecário... neste caso é o bibliotecário que fornece os dados dos livros e de exemplares. Faltou incluir os processos de atualização e remoção de registros de livros e exemplares.
+   + Empréstimo / Renovar / Reservar:  as operações de reservar, emprestar e reservar não possuem relação com algum ator - quem vai realizar estas operações então? Por outro lado, os fluxos de dados dos processos para os repositórios estão ok (apenas em renovar, que não faz alteração em nenhum repositório de dados).
+
+
+***************************************
+
+[9.0]
+As telas estão de acordo mas o protótipo não está totalmente funcional...
+os botões não funcionam. Não foram implementados os eventos básicos requisitados.
+
+
+
+
+

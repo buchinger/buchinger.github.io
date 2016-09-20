@@ -1,0 +1,79 @@
+============================================
+PROJETO 1
+[*Álvaro*] + Carlos, Elder, João e Marcos
+Observações Gerais Diagrama Estados: 7.0 -> (atraso 1d: -0.3) => 6.7 
+- A modelagem dos estados ficou ok, mas a ideia seria escolher
+os eventos mais complexos do sistema a fim de modelar e ficar mais
+fácil a posterior implementação. Ambas as escolhas se referem a
+funcionalidades bastante simples
+e diretas do sistema.
+
+
+Observações Gerais DFD: 9.7 -> (atraso 1d: -0.3) => 9.4
+- Este diagrama está bem mais completo. Ficou bem organizado
+e com um nível de detalhamento adequado. Optaram por não fazer
+vários diagramas com vários níveis de detalhamento: ok.
+- Faltou alguns depósitos de dados apenas: usuários, administradores
+e coordenadores;
+
+
+============================================
+PROJETO 2
+Adilson, Diogo e Gabriela + Eduardo e Vitor
+Observações Gerais Diagrama Estados: 9.5
+- Faltaram alguns detalhes em cada um dos diagramas... mas em geral
+estão muito bons. O diagrama para as reservas tem mais detalhes
+e ficou bastante fácil de entender a sequencia de operações.
+
+
+Observações Gerais DFD: 9.5
+- Optaram por não fazer vários níveis de detalhamento: ok;
+Adotaram um nível de detalhamento moderado.
+
+============================================
+PROJETO 3
+Adam e Alexandre + Felipe, Guilherme e Marcos
+
+Observações Gerais Diagrama Estados: 
+não entregue
+7.0 -> (atraso 7d: -2.1) => 4,9
+- A modelagem dos estados ficou ok, mas a ideia seria escolher
+os eventos mais complexos do sistema a fim de modelar e ficar mais
+fácil a posterior implementação. Ambas as escolhas se referem a
+funcionalidades simples e diretas do sistema.
+
+Observações Gerais DFD: 10.0 -> (atraso 7d: -2.0) -> (bonus: +0.5) => 8,5
+- entregue em papel: ficou bem completa com detalhamento de cada
+operação em diagramas separados
+- bonus por entregar o diagrama com muitos detalhes (compensar um pouco o atraso)
+
+============================================
+PROJETO 4
+Jonathan e Marlon + Mateus, Matheus e Ramon
+Observações Gerais Diagrama Estados: 9.7
+- No diagrama do pagamento de boleto, quando houvesse um problema/
+inconformidade, poderia usar uma transição (seta) para voltar a
+um estado anterior. Entretanto, as verificações colocadas ficaram
+bem completas... assim vai ficar bem mais fácil de implementar esta parte ;)
+- Mesmas considerações para o diagrama do saque... quando houver
+uma incorfomidade deveria usar uma transição para levar a um estado de erro
+e não direto para um fim... todavia, o detalhamento dos estados e das
+condições ficou bem feito.
+
+Observações Gerais DFD: 9.5
+- Optaram por não fazer vários níveis de detalhamento: ok;
+Adotaram um nível de detalhamento moderado.
+
+
+===========================
+PROJETO GABRIEL
+Observações Gerais Diagrama Eventos: 9.5
+- Quando houver uma incorfomidade deveria usar uma transição para
+levar a um estado de erro e não direto para um fim... todavia, o
+detalhamento dos estados e das condições ficou bem feito.
+
+Observações Gerais DFD: 9.0 -> (atraso 15d: -4.0) => 5.0
+- Optou por não fazer vários níveis de detalhamento: ok;
+Adotou um nível de detalhamento moderado;
+utilizou simbolos diferentes (usou algum software?)
+
