@@ -1,0 +1,88 @@
+group: SistemaMedico
+
+Ambulatorios = {
+	nroa:number, andar:number, capacidade:number
+	001, 1, 10
+	002, 1, 15
+	003, 1, 18
+	004, 1, 20
+	202, 2, 40
+	203, 2, 50
+	211, 2, 30
+	302, 3, 20
+	311, 3, 10
+	321, 3, 15
+	333, 3, 10
+	402, 4, 40
+	403, 4, 25
+	404, 4, 95
+	415, 4, 05
+	416, 4, 20
+}
+Medicos = {
+	codm:number, cpf:string, nome:string, idade:number, cidade:string, especialidade:string, nroa:number
+	101500, "09885712309", "Andre Marques", 32, "Joinville", "Feridas Profundas", 001
+	100675, "63211232103", "Bruna Souza", 40, "Joinville", "Queimaduras", 002
+	103453, "12340123121", "Carlos Oliveira", 30, "Blumenau", "Traumatologia", 003
+	100950, "32132236452", "Denise Correa", 36, "Sao Bento do Sul", "Fratura Exposta", 004
+	100985, "56470126402", "Eloir Lannister", 28, "Florianopolis", "Doencas Infecciosas", 202
+	102401, "46871105441", "Fernanda Jaicobson", 29, "Curitiba", "nenhuma", 203
+	100012, "01001234101", "Garold Cochilo", 52, "Chapeco", "Doencas do sono", 311
+	100005, "01014230124", "Haira Longhair", 58, "Joinville", "Ortopedista", 302
+	100012, "43210846320", "Ivo Lokno", 43, "Curitiba", "Ortopedista", 302
+	104123, "63102345872", "Joice Kristni", 28, "Rio Negro", "Psiquiatra", 333
+	100230, "51230125470", "Kaio Martinz", 41, "Joinville", "nenhuma", 302
+	100230, "51230125470", "Luiza Bennet", 33, "Joinville", "Lesoes", 002
+}
+Pacientes = {
+	codp:number, cpf:string, nome:string, idade:number, cidade:string
+	00001, "01232102321", "Ze Feinho", 52, "Jururema"
+	00002, "32156756210", "Vivian Alebreto", 41, "Alexandria"
+	00003, "84632120123", "Tiago Alex", 30, "Joinville"
+	00004, "76532142201", "Roberta Pschit", 28, "Brusque"
+	00005, "64102314789", "Sandro Arlindo", 39, "Brusque"
+	00006, "46214548451", "Paula Marks", 23, "Sao Bento do Sul"
+	00007, "02563211230", "Carla Cituani", 34, "Campo Alegre"
+	00008, "01284631023", "Maria Goncalves Silva", 41, "Florianopolis"
+	00009, "13546210486", "Nicolas Gands", 33, "Florianopolis"
+}
+Consultas = {
+	codm:number, codp:number, data:string, hora:string, doenca:string
+	100985, 00001, "2015/03/21", "11:30", "dengue"
+	100985, 00002, "2014/06/15", "09:45", "sarampo"
+	102401, 00004, "2009/08/09", "08:45", "gripe"
+	103453, 00003, "2006/12/22", "10:30", "traumatismo"
+	100985, 00006, "2016/08/30", "09:00", "dengue"
+	100950, 00005, "2013/01/26", "15:15", "fratura exposta"
+	100985, 00007, "2014/09/17", "14:30", "sarampo"
+	100675, 00008, "2015/07/06", "14:45", "queimadura"
+	102401, 00005, "2015/02/03", "11:15", "nausea"
+	102401, 00002, "2009/03/01", "08:15", "dor de cabeca"
+	102401, 00004, "2010/11/21", "13:30", "gripe"
+	101500, 00003, "2011/04/13", "15:00", "corte profundo"
+	104123, 00008, "2016/06/06", "16:45", "-"
+	102401, 00006, "2016/08/30", "09:00", "virose"
+	100950, 00003, "2014/06/15", "15:15", "fratura exposta"
+	101500, 00001, "2015/03/21", "11:30", "corte profundo"
+	100675, 00001, "2015/03/21", "11:30", "queimaduras de 2o grau"
+	103453, 00001, "2015/03/21", "11:30", "trauma no cranio"
+	100950, 00001, "2015/03/21", "11:30", "perna quebrada"
+	102401, 00001, "2015/03/21", "11:30", "virose"
+	100012, 00001, "2015/03/21", "11:30", "apneia"
+	100005, 00001, "2015/03/21", "11:30", "polegar deslocado"
+	100012, 00001, "2015/03/21", "11:30", "dedao deslocado"
+	104123, 00001, "2015/03/21", "11:30", "alucinacoes"
+	100230, 00001, "2015/03/21", "11:30", "-"
+}
+Funcionarios = {
+	codf:number, cpf:string, nome:string, idade:number, cidade:string, salario:number
+	045, "08756310214", "Pedro Alves", 32, "Joinville", 1300.00
+	052, "42314301230", "Salete Kloss", 25, "Joinville", 1200.00
+	055, "64120123418", "Ricardo Berkler", 25, "Palhoca", 1500.00
+	061, "01284631023", "Maria Goncalves Silva", 41, "Florianopolis", 1350.00
+	063, "05432105412", "Naldo Kcholonsky", 31, "Florianopolis", 1300.00
+	066, "03124012310", "Olivia Beckert", 22, "Sao Bento do Sul", 1100.00
+	067, "06450123425", "Fabio Alesky", 25, "Rio Negrinho", 1050.00
+	069, "02563211230", "Carla Cituani", 34, "Campo Alegre", 1250.00
+	071, "04753120142", "Daniel Striffe", 27, "Sao Bento do Sul", 1300.00
+}
