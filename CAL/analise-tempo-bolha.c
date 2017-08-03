@@ -4,7 +4,7 @@
 #include <Windows.h>
 
 LARGE_INTEGER inicio, fim, tempo, frequencia;
-const int N = 5000;
+const int N = 50000;
 int i, j, l, aux;
 
 //----------------------------------------------------
@@ -47,20 +47,35 @@ int main(){
     vetorPreenche( vetor );
     //vetorMostra( vetor );
 
-    /// Inicia o relógio para contar o tempo
+    // Inicia o relógio para contar o tempo
     QueryPerformanceFrequency( &frequencia );
     QueryPerformanceCounter( &inicio );
 
-    /// Tarefa a qual queremos medir o tempo de execução (aproximação em microssegundos)
+    // Tarefa a qual queremos medir o tempo de execução (aproximação em microssegundos)
     bubbleSort( vetor );
-    // vetorMostra( vetor ); // teste do printf
 
-    /// Interrompe o relógio e calcula o número de microsegundos da operação
+    // Interrompe o relógio e calcula o número de microsegundos da operação
     QueryPerformanceCounter( &fim );
     tempo.QuadPart = fim.QuadPart - inicio.QuadPart;
     tempo.QuadPart *= 1000000;
     tempo.QuadPart /= frequencia.QuadPart;
-    printf("Tempo da tarefa: %li us\n" , tempo );
+    printf("Tempo da ordenacao: %li us\n" , tempo );
+    printf("Relogio parado... Pressione qualquer tecla para continuar\n" );
+    getchar();
+
+    //-------------------------------------------------------------------------
+    // Inicia o relógio para contar o tempo
+    QueryPerformanceFrequency( &frequencia );
+    QueryPerformanceCounter( &inicio );
+
+    vetorMostra( vetor ); // teste do printf
+
+    // Interrompe o relógio e calcula o número de microsegundos da operação
+    QueryPerformanceCounter( &fim );
+    tempo.QuadPart = fim.QuadPart - inicio.QuadPart;
+    tempo.QuadPart *= 1000000;
+    tempo.QuadPart /= frequencia.QuadPart;
+    printf("Tempo para mostrar o vetor: %li us\n" , tempo );
 
     return 0;
 }
