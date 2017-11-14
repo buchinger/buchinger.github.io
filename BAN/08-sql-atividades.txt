@@ -1,8 +1,8 @@
 -- (1)
 --create database clinica
 
+
 -- (2)
-/*
 CREATE TABLE ambulatorios(
    nroa INT PRIMARY KEY,
    andar NUMERIC(3) NOT NULL
@@ -43,51 +43,51 @@ CREATE TABLE consultas(
    CONSTRAINT paciente FOREIGN KEY (codp)
       REFERENCES pacientes (codp)
 );
-*/
+
 
 -- (3)
-/*
+
 ALTER TABLE ambulatorios
 ADD COLUMN capacidade SMALLINT;
 
 ALTER TABLE pacientes
 ADD COLUMN cidade VARCHAR(30);
-*/
+
 
 -- (4)
-/*
+
 ALTER TABLE funcionarios
 DROP COLUMN cargo;
-*/
+
 
 -- (5)
-/*
+
 ALTER TABLE medicos
 ADD CONSTRAINT fk FOREIGN KEY (nroa)
   REFERENCES ambulatorios;
 
 ALTER TABLE medicos
 ADD COLUMN ativo BOOL DEFAULT(true);
-*/
+
 
 -- (6)
-/*
+
 ALTER TABLE pacientes
 DROP COLUMN doenca;
 
 ALTER TABLE consultas
 ADD COLUMN doenca VARCHAR(40) NOT NULL;
-*/
+
 
 -- (7)
-/*
+
 ALTER TABLE consultas
 ADD CONSTRAINT horario_consulta
   CHECK (hora>='06:00' AND hora<='21:00')
-*/
+
 
 -- (8)
-/*
+
 DELETE FROM ambulatorios;
 INSERT INTO ambulatorios (nroa, andar, capacidade)
 VALUES (1,1,30), (2,1,50), (3,2,40), (4,2,25), (5,2,55);
@@ -109,9 +109,9 @@ VALUES (1, 'Ana', 20, 'Florianopolis', 20000200000),
 	   (5, 'Denise', 26, 'Joinville', 30120120231),
 	   (6, 'Marcos', 42, 'Bombinhas', 12347860123),
 	   (7, 'Debora', 19, 'Florianopolis', 56312456478);
-*/
 
-/*
+
+
 DELETE FROM medicos;
 INSERT INTO medicos (codm, nome, idade, especialidade, cpf, cidade, nroa)
 VALUES (1,'Joao',40,'ortopedia',     10000100000,'Florianopolis',1),
@@ -133,27 +133,27 @@ VALUES (1,1,'2006/06/12', '14:00', 'gripe'),
        (3,4,'2006/06/19', '13:00', 'virose'),
        (4,4,'2006/06/20', '13:00', 'tendinite'),
        (4,4,'2006/06/22', '19:30', 'dengue');
-*/   
+  
 
 -- (9)
 -- (a)
---UPDATE pacientes SET cidade = 'Ilhota'
---WHERE nome = 'Paulo'
+UPDATE pacientes SET cidade = 'Ilhota'
+WHERE nome = 'Paulo'
 -- (b)
---UPDATE consultas SET hora = '12:00', data = '2006/07/04'
---WHERE codm = 1 AND codp = 4
+UPDATE consultas SET hora = '12:00', data = '2006/07/04'
+WHERE codm = 1 AND codp = 4
 -- (c)
---UPDATE pacientes SET idade = idade + 1
---WHERE nome = 'Ana'
+UPDATE pacientes SET idade = idade + 1
+WHERE nome = 'Ana'
 -- (d)
---UPDATE consultas SET hora = hora + '1:30'
---WHERE codm = 3 AND codp = 4
+UPDATE consultas SET hora = hora + '1:30'
+WHERE codm = 3 AND codp = 4
 -- (e)
---DELETE FROM funcionarios
---WHERE codf = 4
+DELETE FROM funcionarios
+WHERE codf = 4
 -- (f)
---DELETE FROM consultas
---WHERE hora > '19:00'
+DELETE FROM consultas
+WHERE hora > '19:00'
 -- (g)
---UPDATE medicos SET ativo = false
---WHERE cidade = 'Biguacu' OR cidade = 'Joinville'
+UPDATE medicos SET ativo = false
+WHERE cidade = 'Biguacu' OR cidade = 'Joinville'
