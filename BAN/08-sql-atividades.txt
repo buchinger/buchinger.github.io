@@ -83,7 +83,7 @@ ADD COLUMN doenca VARCHAR(40) NOT NULL;
 
 ALTER TABLE consultas
 ADD CONSTRAINT horario_consulta
-  CHECK (hora>='06:00' AND hora<='21:00')
+  CHECK (hora>='06:00' AND hora<='21:00');
 
 
 -- (8)
@@ -138,22 +138,22 @@ VALUES (1,1,'2006/06/12', '14:00', 'gripe'),
 -- (9)
 -- (a)
 UPDATE pacientes SET cidade = 'Ilhota'
-WHERE nome = 'Paulo'
+WHERE nome = 'Paulo';
 -- (b)
 UPDATE consultas SET hora = '12:00', data = '2006/07/04'
-WHERE codm = 1 AND codp = 4
+WHERE codm = 1 AND codp = 4;
 -- (c)
 UPDATE pacientes SET idade = idade + 1
-WHERE nome = 'Ana'
+WHERE nome = 'Ana';
 -- (d)
 UPDATE consultas SET hora = hora + '1:30'
-WHERE codm = 3 AND codp = 4
+WHERE codm = 3 AND codp = 4;
 -- (e)
 DELETE FROM funcionarios
-WHERE codf = 4
+WHERE codf = 4;
 -- (f)
 DELETE FROM consultas
-WHERE hora > '19:00'
+WHERE hora > '19:00';
 -- (g)
 UPDATE medicos SET ativo = false
-WHERE cidade = 'Biguacu' OR cidade = 'Joinville'
+WHERE cidade = 'Biguacu' OR cidade = 'Joinville';
