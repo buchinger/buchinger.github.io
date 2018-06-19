@@ -23,20 +23,21 @@ CREATE TABLE funcionarios(
 	cpf NUMERIC(11) PRIMARY KEY,
 	nome VARCHAR(255) NOT NULL,
 	endereco VARCHAR(255) NOT NULL,
-	telefone CHAR(8) NOT NULL
+	telefone CHAR(9) NOT NULL
 );
 INSERT INTO funcionarios VALUES
-	(13355457868, 'Alberto Roesser', 'Rua Avenquinha Sudeste, 321, São Brito', '97651345'),
+	(13355457868, 'Alberto Roesser', 'Rua Avenquinha Sudeste, 321, São Brito', '997651345'),
 	(41286484774, 'Kaua Gonçalves Correia', 'Quadra SQS, 314, Bloco G, 914', '96064374'),
 	(51254997300, 'Gustavo Rodrigues Melo', 'Rua Alfredo Kucknbecker, 1667', '99335377'),
 	(43824462958, 'Ana Pereira Santos', 'Avenida Siriema, 1312', '99009336'),
 	(67956626676, 'Beatriz Flávia Mendes', 'Rua Envira, 1385', '95422650'),
 	(48235257602, 'Isabela Alves Cardoso', 'Rua Dona Cidinha Stussi, 1184', '83994114'),
-	(42256508048, 'Matilde Cunha Castro', 'Rua Alexandria, 986', '89444713'),
+	(42256508048, 'Matilde Cunha Castro', 'Rua Alexandria, 986', '989444713'),
 	(35464641173, 'Diogo Samuel Fernandes', 'Condomínio, Buritis Quadra 05, 906', '37037789'),
 	(78025385728, 'Kevin Renan Fernando Castro', 'Rua Roberto Simonsen, 532, Bela Vista', '37608691'),
 	(15619276783, 'Hadassa Bárbara dos Santos', 'Alameda Sabiá, 811, Senador Arnon de Melo', '37467148'),
-	(26620269877, 'Felipe Oliveira Costa', 'Rua Lins, 382, Cidade Industrial', '94895052');
+	(26620269877, 'Felipe Oliveira Costa', 'Rua Lins, 382, Cidade Industrial', '94895052'),
+	(78673973961, 'Mauro Gasner', 'Rua Otaviano Alberto, 66, Bom Retiro', '998984004');
 	
 CREATE TABLE contratos(
 	cnpj NUMERIC(14) REFERENCES pizzarias(cnpj),
@@ -58,8 +59,9 @@ INSERT INTO contratos VALUES
 	(52276414575732, 26620269877, 4, '2005-06-07', '2011-01-25', 1100.00),
 	(52276414575732, 78025385728, 4, '2011-02-03', NULL, 1250.00),
 	(58214097002317, 15619276783, 2, '2016-03-15', NULL, 1100.00),
-	(58214097002317, 35464641173, 3, '2016-03-21', NULL, 2000.00 ),
-	(58214097002317, 26620269877, 4, '2016-03-29', NULL, 1000.00);
+	(58214097002317, 35464641173, 3, '2016-03-21', NULL, 2000.00),
+	(58214097002317, 26620269877, 4, '2016-03-29', NULL, 1000.00),
+	(52276414575732, 78673973961, 4, '2016-06-23', NULL, 1250.00);
 
 CREATE TABLE clientes(
 	cpf NUMERIC(11) PRIMARY KEY,
@@ -125,8 +127,11 @@ CREATE TABLE pedidoBebidas(
 INSERT INTO pedidoBebidas (codPedido, codBebida, quantidade) VALUES
 	( 3, 1, 1),
 	( 9, 2, 2),
+	( 9, 3, 1),
+	( 9, 4, 1),
 	(12, 4, 1),
-	(15, 3, 2);
+	(15, 3, 2),
+	(15, 4, 1);
 
 	
 CREATE TABLE tamanhos(
