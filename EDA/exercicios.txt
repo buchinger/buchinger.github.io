@@ -1,0 +1,86 @@
+// REVISÃO DE FUNÇÕES e PONTEIROS
+//---------------------------------
+// - Exercício 1: escreva uma função recursiva
+//     	que realiza divisão através de subtrações
+//
+// - Exercício 2: escreva uma função chamada 'troca'
+// 		que recebe dois inteiros e troca o valor entre eles
+//
+// - Exercício 3: escreva uma função recursiva
+//     	que recebe um vetor de inteiros, seu tamanho e um valor inteiro 'D'.
+//		O vetor recebido representa uma relação de dependência direta para
+//		a instalação de um determinado software, por exemplo:
+//		[1, 4, 0, 1, -1, 4], neste caso o software id=4 não possui dependência (-1)
+//       0  1  2  3   4  5   ao passo que o software id=2 depende do software id=0,
+//							que por sua vez depende do software id=1, o qual
+//							depende do software id=4.
+//		A função recursiva deverá mostrar em tela a ordem em que os software devem
+//		ser instalados para que o software 'D' (passado por parâmetro) possa ser instalado.
+//      
+// - Exercício 4: escreva uma função chamada 'compare'
+// 		que deve receber dois arrays numéricos e seus respectivos
+//		tamanhos, os quais representam números grandes
+//      (ex: {1,5,7,2,0,5} = 157.205), e responder qual deles é maior.
+//		A função deve retornar +1 se o primeiro número/array for maior,
+//		-1 se o primeiro número / array for menor ou 0 (zero) caso ambos
+//		ambos sejam exatamente iguais.
+
+// - Exercício 5: escreva uma função chamada 'find'
+// 		que deve receber duas strings 't' e 's' (ponteiro para caracter) que
+//      representam respectivamente um texto e uma palavra. A função
+//		deve encontrar e retornar o índice de início de todas as ocorrências
+//      da palavra 's' em 't'.
+//		(ex: "soh sei que nada sei", "sei" => {4,17});
+//			  00000000001111111111
+//            01234567890123456789 
+
+
+
+
+// REVISÃO DE STRUCTS
+//---------------------------------
+
+// - Exercício 1: usando a struct Cliente da aula-03, escreva uma função
+//		'responsavelSuperior' que recebe um Cliente e retorna o nome do seu
+//		responsável de maior hierarquia.
+//      ex: se 'Mr.C' é de responsabilidade de 'Mr.B' e 'Mr.B' é de responsabilidade de
+//		  'Mr.A', caso seja passado 'Mr.C' para a função, esta deve retornar 'Mr.A',
+//		  pois 'Mr.A' é responsável indireto de 'Mr.C' e é de responsabilidade de ninguem.
+
+// - Exercício 2: escreva uma estrutura para representar Disciplinas, Registros e
+//		Alunos. A estrutura Disciplina deve conter um vetor de três caracteres
+//		que contem a sigla da disciplina e um vetor de caracteres que contem o nome
+// 		da disciplina. A estrutura Registro (registro de desempenho) deve ter um 
+//		ponteiro para Disciplina, representando qual disciplina referente ao registro,
+//		um inteiro que indica o ano/semestre da matricula, um float indicando 
+//		a frequência e um float indicando a nota obtida. A estrutura Alunos deve
+//  	conter um inteiro para a matrícula, e um vetor de caracteres para o nome do
+// 		aluno e um ponteiro	para um vetor de Registros de desempenho do aluno.
+
+
+// - Exercício 3: escreva algumas funções que fazem uso das estruturas criadas:
+//		Disciplina* criarDisciplina(char* sigla, char* nome);
+//			Aloca e retorna uma nova disciplina
+
+//		Registro* criarRegistro(Discipina *dis, int semestre, float freq, float nota);
+//			Aloca e retorna um novo registro de desempenho
+
+//		boolean aprovado(Registro *reg);
+//			Verifica se o registro trata de uma aprovação (retorna true), ou de uma
+//			reprovação (retorna false) com base na frequencia e na média
+
+//		Aluno* criarAluno(int mat, char* nome);
+//			Aloca e retorna um novo aluno
+
+//		void addRegistro(Aluno* aluno, Registro *registro);
+//			Adiciona um novo registro de desempenho para o aluno
+
+//		void showHistorico(Aluno *aluno);
+//			Mostra o histórico de um aluno, apresentando sua matrícula, seu nome,
+//			e os dados de todos os resultados obtidos, apresentando a sigla da disciplina
+//			o semestre cursada, a frequencia obtida e a nota obtida;
+//			Ex:: Aluno: Bob da Silva Sauro  /  Matricula: 20189081
+//				AGT - nota: 8.2 - frequencia:  92.5%
+//				LPG - nota: 7.8 - frequencia: 100.0%
+//				POO - nota: 5.5 - frequencia:  70.0%
+//
