@@ -1,0 +1,77 @@
+CREATE TABLE curso(
+	cod INT PRIMARY KEY,
+	nome VARCHAR(30) NOT NULL
+);
+INSERT INTO curso VALUES (1, 'Ciência da Computação');
+INSERT INTO curso VALUES (2, 'TADS');
+INSERT INTO curso VALUES (3, 'Física');
+	
+CREATE TABLE disciplina1(
+	cod INT PRIMARY KEY,
+	nome VARCHAR(50) NOT NULL,
+	cod_curso INT
+);
+INSERT INTO disciplina1 VALUES
+	(1,'Banco de Dados I', 1),
+	(2,'Banco de Dados I', 2),
+	(3,'Estrutura de Dados', 2),
+	(4,'Calculo XIII', 3);
+	
+UPDATE curso SET cod = 55 WHERE cod = 2;
+DELETE FROM curso WHERE cod = 3;
+SELECT * FROM curso
+SELECT * FROM disciplina4
+
+CREATE TABLE disciplina2(
+	cod INT PRIMARY KEY,
+	nome VARCHAR(50) NOT NULL,
+	cod_curso INT,
+	CONSTRAINT chave_estrangeira_curso
+		FOREIGN KEY (cod_curso)
+		REFERENCES curso(cod)
+);
+INSERT INTO disciplina2 VALUES
+	(1,'Banco de Dados I', 1),
+	(2,'Banco de Dados I', 2),
+	(3,'Estrutura de Dados', 2),
+	(4,'Calculo XIII', 3);
+
+
+
+CREATE TABLE disciplina3(
+	cod INT PRIMARY KEY,
+	nome VARCHAR(50) NOT NULL,
+	cod_curso INT,
+	CONSTRAINT chave_estrangeira_curso
+		FOREIGN KEY (cod_curso)
+		REFERENCES curso(cod)
+		ON DELETE SET NULL
+);
+INSERT INTO disciplina3 VALUES
+	(1,'Banco de Dados I', 1),
+	(2,'Banco de Dados I', 2),
+	(3,'Estrutura de Dados', 2),
+	(4,'Calculo XIII', 3);
+
+CREATE TABLE disciplina4(
+	cod INT PRIMARY KEY,
+	nome VARCHAR(50) NOT NULL,
+	cod_curso INT,
+	CONSTRAINT chave_estrangeira_curso
+		FOREIGN KEY (cod_curso)
+		REFERENCES curso(cod)
+		ON DELETE CASCADE
+		ON UPDATE SET NULL
+);
+INSERT INTO disciplina4 VALUES
+	(1,'Banco de Dados I', 1),
+	(2,'Banco de Dados I', 2),
+	(3,'Estrutura de Dados', 2),
+	(4,'Calculo XIII', 3);
+
+
+DROP TABLE disciplina1;
+DROP TABLE disciplina2;
+DROP TABLE disciplina3;
+DROP TABLE disciplina4;
+DROP TABLE curso;	
