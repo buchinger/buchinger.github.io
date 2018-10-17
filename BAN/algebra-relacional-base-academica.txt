@@ -1,7 +1,7 @@
 group: SistemaAcademico
 
 Cursos = {
-	codCurso:number, nome:string
+	codCurso:number, nomeCurso:string
 	1,'Ciencia da Computacao'
 	2,'TADS'
 	3,'Fisica'
