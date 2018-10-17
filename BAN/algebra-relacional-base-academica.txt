@@ -2,15 +2,15 @@ group: SistemaAcademico
 
 Cursos = {
 	cod:number, nome:string
-	1,'Ciência da Computação'
+	1,'Ciencia da Computacao'
 	2,'TADS'
-	3,'Física'
+	3,'Fisica'
 	4,'Engenharia Civil'
 }
 
 Disciplinas = {
 	cod:number, nome:string, codCurso:number
-	1, 'Introdução a Computação' , 1
+	1, 'Introducao a Computacao' , 1
 	2, 'Fisica XIII'             , 3
 	3, 'Algoritmos I'            , 1
 	4, 'Algoritmos I'            , 2
@@ -18,6 +18,7 @@ Disciplinas = {
 	6, 'POO'           	     , 1
 	7, 'POO'		     , 2
 	8, 'Astronomia'		     , 3
+	9, 'Jogatina Avancada'	     , 5
 }
 
 Alunos = {
