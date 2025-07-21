@@ -1,0 +1,23 @@
+[
+  {
+    "category": "Python",
+    "date": "01/11/2023",
+    "id": "b9d7cd26-ea7a-4de5-9c64-393fa9813de5",
+    "notes": "Book about Python",
+    "url": "https://python.nilo.pro.br"
+  },
+  {
+    "category": "Books",
+    "date": "21/02/2024",
+    "id": "9d856151-bc09-4757-b5f4-7f47fe0b464a",
+    "notes": "Book Editor",
+    "url": "https://www.novatec.com.br"
+  },
+  {
+    "category": "Search",
+    "date": "21/07/2025",
+    "id": "b1301505-4d69-47fc-8fdc-8496d8af8e80",
+    "notes": "New Entry. Testing!\n\n",
+    "url": "https://google.com"
+  }
+]
